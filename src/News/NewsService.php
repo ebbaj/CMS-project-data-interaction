@@ -76,4 +76,10 @@ class NewsService
 
         return $this->getNewsItem($model->id);
     }
+
+    public function deleteNewsItem(int $id) {
+        $query = "delete from news where id=:id";
+        $statement = $this->prepare($query);
+        $statement->execute(['id' => $id]);
+    }
 }

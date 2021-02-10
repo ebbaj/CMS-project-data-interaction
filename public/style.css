@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --text-color: #000000;
+    --text-color-hover: #a8a8a8;
+    --header-background: #6cb1ff;
+}
+
+/*---ADMIN---*/
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 2rem;
+    grid-row: 1/2;
+}
+
+.admin-main {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: 20% 1fr;
+}
+
+.admin-aside {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.aside-heading {
+    margin-bottom: 2rem;
+}
+
+.admin-aside li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-section {
+    grid-column: 1/2;
+    align-self: center;
+    justify-self: center;
+    grid-row: 2/3;
+}
+
+.button-wrapper button {
+    margin-bottom: 1rem;
+    width: 5rem;
+    padding: 5px;
+}
+
+.form-container {
+    width: 300px;
+}
+
+.form-container form {
+    visibility: hidden;
+   /* position: absolute; */
+    top: 0;
+    width: 100%;
+    padding: 3%;
+    border: 1px solid var(--text-color-hover);
+}
+
+#add-news-form {
+    visibility: visible;
+}
+
+.form-container label {
+    font-size: small;
+}
+
+.form-container input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 15px;
+}
+
+.card {
+    border: 1px solid var(--text-color-hover);
+    padding: 1rem;
+}

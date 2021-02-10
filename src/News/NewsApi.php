@@ -61,6 +61,12 @@ class NewsApi
             $response->getBody()->write(json_encode($returnModel));
             return $response->withHeader('Content-Type', 'application/json');
         });
+
+        /* delete news items */
+        $group->delete('/{id}', function (Request $request, Response $response, $args) {
+            $this->newsService->deleteNewsItem((int)$args['id']);
+            return $response->withStatus(204);
+        });
     }
 
     /**

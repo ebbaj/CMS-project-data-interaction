@@ -11,14 +11,15 @@ const renderPosts = (posts) => {
             <div class="card">
                 <div class="card-body" data-id="${post.id}">
                     <h5 class="card-title">${post.title}</h5>
-                    <h6 class="card-created">${post.created}</h6>
-                    <h6 class="card-updated">${post.updated}</h6>
+                    <h6 class="card-created">Published: ${post.created}</h6>
+                    <h6 class="card-updated">Updated: ${post.updated}</h6>
                     <p class="card-text">${post.content}</p>
                     <a href="#" class="card-link" id="edit-post">Edit</a>
                     <a href="#" class="card-link" id="delete-post">Delete</a>
                 </div>
             </div>
         `;
+
     });
     newsList.innerHTML = output;
 }
@@ -61,7 +62,7 @@ newsList.addEventListener('click', (e) => {
     }
 
     //Update - update the existing posts
-    //method: PATCH
+    //method: PUT
     btnSubmit.addEventListener("click", (e) => {
         e.preventDefault();
         fetch(`${apiRoot}/${id}`, {
